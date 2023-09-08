@@ -2,8 +2,8 @@ const ventasService = require('../services/ventas.service');
 
 const ventasController = {
     registrarVenta: (req, res) => {
-        const { producto_id, cantidad_vendida } = req.body;
-        ventasService.registrarVenta(producto_id, cantidad_vendida)
+        const { producto_id, cantidad_vendida, fecha_venta } = req.body;
+        ventasService.registrarVenta(producto_id, cantidad_vendida, fecha_venta)
             .then(() => {
                 res.json({ message: 'Venta registrada exitosamente' });
             })
