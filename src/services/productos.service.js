@@ -29,7 +29,7 @@ const productosService = {
 
     obtenerProductos: () => {
         return new Promise((resolve, reject) => {
-            db.query('SELECT * FROM producto', (err, result) => {
+            db.query('SELECT * FROM producto ORDER BY nombre', (err, result) => {
                 if (err) {
                     reject(err);
                 } else {
